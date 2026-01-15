@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:provider_use_counterapp/counter_provider.dart';
-import 'package:provider_use_counterapp/counterpage2.dart';
 
 class Counterpage extends StatelessWidget {
   const Counterpage({super.key});
@@ -23,9 +22,9 @@ class Counterpage extends StatelessWidget {
          
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            
+            Text("count value",style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold,color: Colors.orange),),
             SizedBox(height: 10,),
-           
+            Text(counterProvider.count.toString(),style: TextStyle(fontSize: 30),),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
                children: [
@@ -44,23 +43,8 @@ class Counterpage extends StatelessWidget {
               onPressed: (){
                 counterProvider.increment();
               }, child: Text("+",style: TextStyle(fontSize: 35),)),
-              
-             
           ],
-            ),
-            SizedBox(height: 30,),
-             Column(
-                children: [
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.blue,
-                      
-                    ),
-                    onPressed: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>Counterpage2()));
-                    }, child: Text("go to next screen"))
-                ],
-              )
+            )
           ],
           
          
